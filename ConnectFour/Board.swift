@@ -137,23 +137,13 @@ func checkVerticalColumn(_ columnToCheck: Int) -> Bool
 
 func diagonalVictory() -> Bool
 {
+    let options = [[true, true], [true, false], [false, true], [false, false]]
     for column in 0...board.count
     {
-        if checkDiagonalColumn(column, true, true)
-        {
-            return true
-        }
-        if checkDiagonalColumn(column, true, false)
-        {
-            return true
-        }
-        if checkDiagonalColumn(column, false, true)
-        {
-            return true
-        }
-        if checkDiagonalColumn(column, false, false)
-        {
-            return true
+        for option in options {
+            if (checkDiagonalColumn(column, option[0], option[1])) {
+                return true
+            }
         }
     }
     return false
