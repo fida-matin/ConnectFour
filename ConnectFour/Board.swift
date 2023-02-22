@@ -162,7 +162,7 @@ func diagonalVictory() -> Bool
 func checkDiagonalColumn(_ columnToCheck: Int,_ moveUp: Bool,_ reverseRows: Bool) -> Bool {
     var movingColumn = columnToCheck
     var consecutive = 0
-    var boardSet = reverseRows ? board.reversed() : board
+    let boardSet = reverseRows ? board.reversed() : board
     
     for row in boardSet{
         if movingColumn < row.count && movingColumn >= 0
